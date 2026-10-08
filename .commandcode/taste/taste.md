@@ -1,0 +1,1 @@
+- Prefers proper root-cause fixes over quick workarounds (e.g., disabling checks via env vars) — asked to "solve this properly". Confidence: 0.7
