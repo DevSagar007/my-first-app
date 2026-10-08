@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(node --version)",
+      "Shell(npm:*)",
+      "Shell(if:*)",
+      "Shell(else:*)",
+      "Shell(node -e \"console.log(require('expo/package.json').version)\")"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}
