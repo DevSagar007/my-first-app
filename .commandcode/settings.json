@@ -5,7 +5,17 @@
       "Shell(npm:*)",
       "Shell(if:*)",
       "Shell(else:*)",
-      "Shell(node -e \"console.log(require('expo/package.json').version)\")"
+      "Shell(node -e \"console.log(require('expo/package.json').version)\")",
+      "Shell(npx tsc --noEmit)",
+      "Shell(npx expo lint)",
+      "Shell(node -e \"console.log('eslint root:', require('fs').existsSync('node_modules/eslint')); console.log('eslint nested:', require('fs').existsSync('node_modules/eslint-config-expo/node_modules/eslint'))\")",
+      "Shell(node -e \"const fs=require('fs'); const dirs=fs.readdirSync('node_modules').filter(d=>d.toLowerCase().includes('eslint')); console.log(dirs)\")",
+      "Shell(node -e \"const fs=require('fs'); console.log(fs.readdirSync('node_modules').length); console.log(fs.readdirSync('node_modules').slice(0,50).join(', '))\")",
+      "Shell(node -e \"const fs=require('fs'); ['eslint','eslint-config-expo','tailwindcss','babel-preset-expo','nativewind'].forEach(d=>console.log(d, fs.existsSync('node_modules/'+d)))\")",
+      "Shell(node -e \"const fs=require('fs'); console.log('npmrc project:', fs.existsSync('.npmrc')); if(fs.existsSync('.npmrc')) console.log(fs.readFileSync('.npmrc','utf8')); console.log('npmrc user:', process.env.npm_config_userconfig); if(process.env.npm_config_userconfig) console.log(fs.readFileSync(process.env.npm_config_userconfig,'utf8'))\")",
+      "Shell(node -e \"const fs=require('fs'); const p='node_modules/.package-lock.json'; console.log('exists', fs.existsSync(p)); if(fs.existsSync(p)){const j=JSON.parse(fs.readFileSync(p,'utf8')); console.log('has eslint key:', !!j.packages['node_modules/eslint']); console.log('eslint entry:', JSON.stringify(j.packages['node_modules/eslint'] && {v:j.packages['node_modules/eslint'].version, resolved:j.packages['node_modules/eslint'].resolved}))}\")",
+      "Shell(node -e \"const fs=require('fs'); ['@typescript-eslint/eslint-plugin','@typescript-eslint/parser','@typescript-eslint/types','@eslint/js','eslint-scope','espree','ajv'].forEach(d=>console.log(d, fs.existsSync('node_modules/'+d)))\")",
+      "powershell"
     ],
     "deny": [],
     "defaultMode": "default"

@@ -1,1 +1,4 @@
 - Prefers proper root-cause fixes over quick workarounds (e.g., disabling checks via env vars) — asked to "solve this properly". Confidence: 0.7
+- Expects the agent to actually run/launch the project and verify it works end-to-end (e.g., start the dev server and confirm the app bundles on-device), not just make code edits. Confidence: 0.6
+- Communicates in very short, informal, sometimes non-native-English phrases (e.g., "now you are run project") and expects the agent to infer intent, asking a clarifying question only when genuinely ambiguous. Confidence: 0.55
+- Prefers a minimal tooling set — wants unused tools and their config/deps/scripts removed entirely rather than left in place (e.g., "eslint not need so remove it"). Confidence: 0.5
